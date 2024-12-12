@@ -1,4 +1,4 @@
--- [[ BOOGA HUB V5 ]]
+-- [[ BOOGA HUB V6 ]]
 
 if not game:IsLoaded() then
     game.Loaded:Wait()
