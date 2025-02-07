@@ -1,51 +1,223 @@
 <html>
-    <body>
+  <head>
+    <title>BOOGA SCRIPTS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
 
-        <a href="https://discord.gg/F5WbRVWCaT">
-            <button class="DefaultButton">Join Booga Server</button>
-        </a>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        <h1>Scripts Download</h1>
+      #Background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        background: #121212;
+      }
 
+      body {
+        font-family: 'Montserrat', sans-serif;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #121212;
+        color: #f0f0f0;
+      }
+
+      .Scripts {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: stretch;
+        width: 80%;
+        max-width: 1200px;
+        height: 80vh;
+      }
+
+      .FreeScripts, .PaidScripts {
+        position: relative;
+        background: rgba(0, 0, 0, 0.75);
+        backdrop-filter: blur(8px);
+        border-radius: 15px;
+        padding: 2rem;
+        width: 100%;
+        max-width: 500px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+        animation: FadeIn 1s ease-out forwards;
+        opacity: 0;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        transition: transform 0.3s ease;
+      }
+      
+      .FreeScripts:hover, .PaidScripts:hover {
+        transform: scale(1.03);
+      }
+      
+      @keyframes FadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        letter-spacing: 2px;
+        color: #ff6f61;
+        border-bottom: 2px solid #ff6f61;
+        display: inline-block;
+        padding-bottom: 0.5rem;
+      }
+
+      .Button {
+        display: inline-block;
+        margin: 0.5rem 0;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: #fff;
+        background: linear-gradient(45deg, #ff6f61, #ff3b2e);
+        border: none;
+        border-radius: 50px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+
+      .Button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(255, 111, 97, 0.5);
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
+      li {
+        margin: 1rem 0;
+      }
+
+      .DcServerButton {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        z-index: 10;
+        opacity: 0;
+        animation: FadeInBtn 1s ease-out forwards;
+      }
+
+      @keyframes FadeInBtn {
+        to {
+          opacity: 1;
+        }
+      }
+
+      .Title {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 3rem;
+        font-weight: bold;
+        color: #ff6f61;
+        letter-spacing: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="Background"></canvas>
+    <div class="Title">BOOGA SCRIPTS</div>
+    <div class="Scripts">
+      <div class="FreeScripts">
+        <h1>FREE SCRIPTS DOWNLOAD</h1>
         <ul>
-
-            <li>
-                <a href="/Scripts/BOOGA HUB V6.lua" download>
-                    <button class="DefaultButton">BOOGA HUB V6</button>
-                </a>
-            </li>
-            
-            <li>
-                <a href="/Scripts/BOOGA_AUTOBROLY_V10.lua" download>
-                    <button class="DefaultButton">BOOGA AUTOBROLY V10</button>
-                </a>
-            </li>
-
-            <li>
-                <a href="/Scripts/BOOGA_CMDS_V2.lua" download>
-                    <button class="DefaultButton">BOOGA CMDS V2</button>
-                </a>
-            </li>
-
-            <li>
-                <a href="/Scripts/BOOGA_AUTOTOP_V2.lua" download>
-                    <button class="DefaultButton">BOOGA AUTO TOP V2</button>
-                </a>
-            </li>
-
-            <li>
-                <a href="/Scripts/BOOGA INFINITE STATS V4.lua" download>
-                    <button class="DefaultButton">BOOGA INF STATS V4</button>
-                </a>
-            </li>
-
-            <li>
-                <a href="/Scripts/BoogaRejoiner.exe" download>
-                    <button class="DefaultButton">BOOGA AUTOREJOINER (FREE VERSION)</button>
-                </a>
-            </li>
-
+          <li><a href="/Scripts/BOOGA HUB V6.lua" download class="Button">BOOGA HUB V6</a></li>
+          <li><a href="/Scripts/BOOGA_AUTOBROLY_V10.lua" download class="Button">BOOGA AUTOBROLY V10</a></li>
+          <li><a href="/Scripts/BOOGA_CMDS_V2.lua" download class="Button">BOOGA CMDS V2</a></li>
+          <li><a href="/Scripts/BOOGA_AUTOTOP_V2.lua" download class="Button">BOOGA AUTO TOP V2</a></li>
+          <li><a href="/Scripts/BOOGA INFINITE STATS V4.lua" download class="Button">BOOGA INF STATS V4</a></li>
+          <li><a href="/Scripts/BoogaRejoiner.exe" download class="Button">BOOGA AUTOREJOINER (FREE VERSION)</a></li>
         </ul>
+      </div>
 
-    <body>
+      <div class="PaidScripts">
+        <h1>PAID SCRIPTS DOWNLOAD</h1>
+        <ul>
+          <li><a href="https://www.universenile.com/product-page/inf-stats-script-booga-1" class="Button" target="_blank">BOOGA INFINITE STATS V5</a></li>
+          <li><a href="https://www.universenile.com/product-page/booga-hub" class="Button" target="_blank">BOOGA HUB V2 - DRAGON SOUL</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <a href="https://discord.gg/F5WbRVWCaT" class="Button DcServerButton">JOIN BOOGA SERVER</a>
+
+    <script>
+      const Background = document.getElementById("Background")
+      const Context = Background.getContext("2d")
+
+      const Width = window.innerWidth
+      const Height = window.innerHeight
+
+      Background.width = Width
+      Background.height = Height
+
+      window.onresize = () => {
+        Background.width = window.innerWidth
+        Background.height = window.innerHeight
+      }
+
+      const Circles = Array.from({length: 150}, () => ({
+        X: Math.random() * Width,
+        Y: Math.random() * Height,
+        Size: Math.random() * 2 + 1,
+        SpeedX: Math.random() * 0.5 - 0.25,
+        SpeedY: Math.random() * 0.5 - 0.25
+      }))
+
+      function Animate() {
+        Context.clearRect(0, 0, Width, Height)
+
+        for (const Circle of Circles) {
+          Circle.X += Circle.SpeedX
+          Circle.Y += Circle.SpeedY
+
+          if (Circle.X < 0) {
+            Circle.X = Width
+          } else if (Circle.X > Width) {
+            Circle.X = 0
+          }
+          
+          if (Circle.Y < 0) {
+            Circle.Y = Height
+          } else if (Circle.Y > Height) {
+            Circle.Y = 0
+          }          
+
+          Context.fillStyle = "#FFF"
+          Context.beginPath()
+          Context.arc(Circle.X, Circle.Y, Circle.Size, 0, Math.PI * 2)
+          Context.fill()
+        }
+
+        requestAnimationFrame(Animate)
+      }
+
+      Animate()
+    </script>
+  </body>
 </html>
